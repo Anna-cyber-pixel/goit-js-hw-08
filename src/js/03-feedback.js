@@ -31,6 +31,9 @@ function lastInputForm() {
 
 ref.form.addEventListener('submit', onSubForm);
 function onSubForm(e) {
+  if (formData.email === '' || formData.message === '') {
+    return alert('Будь ласка заповніть всі поля!');
+  }
   console.log(formData);
   e.preventDefault();
   e.currentTarget.reset();
