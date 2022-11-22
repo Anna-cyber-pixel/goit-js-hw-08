@@ -31,7 +31,7 @@ function lastInputForm() {
 
 ref.form.addEventListener('submit', onSubForm);
 function onSubForm(e) {
-  console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
+  console.log(formData);
   e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
