@@ -11,7 +11,8 @@ lastInputForm();
 const formData = {};
 ref.form.addEventListener('input', throttle(onInputForm, 500));
 function onInputForm(e) {
-  formData[e.target.name] = e.target.value;
+  formData.email = ref.input.value;
+  formData.message = ref.textarea.value;
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
 
@@ -30,7 +31,8 @@ function lastInputForm() {
 
 ref.form.addEventListener('submit', onSubForm);
 function onSubForm(e) {
-  console.log(localStorage.getItem('feedback-form-state'));
+  console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
   e.preventDefault();
   e.currentTarget.reset();
+  localStorage.removeItem('feedback-form-state');
 }

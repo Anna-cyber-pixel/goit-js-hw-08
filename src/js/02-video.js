@@ -9,4 +9,8 @@ function onPlayUpdate(e) {
   localStorage.setItem('videoplayer-current-time', e.seconds);
 }
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+if(localStorage.getItem('videoplayer-current-time' !== null)){
+  player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+};
+
+
